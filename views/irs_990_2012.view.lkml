@@ -209,7 +209,8 @@ view: irs_990_2012 {
   dimension: profndraising {
     type: number
     description: "Professional fundraising fees"
-    sql: ${TABLE}.profndraising;;
+    sql: ${TABLE}.profndraising ;;
+    value_format: "#,##0.00;(#,##0.00)"
   }
 
   dimension: retainedearnend {
@@ -380,12 +381,12 @@ view: irs_990_2012 {
   }
   measure: calc_netinc_sales_sum {
     type: sum
-    sql: (${irs_990_2012.profndraising}/20)*${irs_990_2012.netincsales} ;;
+    sql: (${irs_990_2012.profndraising}/5000)*${irs_990_2012.netincsales} ;;
     value_format: "#,##0.00;(#,##0.00)"
   }
   measure: calc_netinc_sales_number {
     type: number
-    sql: (${irs_990_2012.profndraising}/20)*${irs_990_2012.netincsales} ;;
+    sql: (${irs_990_2012.profndraising}/5000)*${irs_990_2012.netincsales} ;;
     value_format: "$0.0,,\"M\";($0.0,,\"M\")"
   }
 
