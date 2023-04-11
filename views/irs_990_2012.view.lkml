@@ -389,6 +389,34 @@ view: irs_990_2012 {
     sql: (${irs_990_2012.profndraising}/5000)*${irs_990_2012.netincsales} ;;
     value_format: "$0.0,,\"M\";($0.0,,\"M\")"
   }
+  measure: custom_liquid {
+    type: string
+    sql:
+
+    ----Custom
+
+    {% assign words = "2019.Actuals" | split: '.' %}
+
+    {% if words[1] contains "BUD"%}
+
+    (select 'Inside Budget Query')
+
+    {% elsif words[1] contains "As"%}
+
+    (select 'Asadfsd')
+
+    {% elsif words[1] contains "Actuals"  %}
+
+    (select 'Inside Actuals Query')
+
+    {% else %}
+
+    (select 'default')
+
+    {% endif %};;
+
+  }
+
 
 
 }
