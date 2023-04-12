@@ -395,7 +395,7 @@ view: irs_990_2012 {
 
     ----Custom
 
-    {% assign words = "2019.Actuals" | split: '.' %}
+    {% assign words = "2019.NoneOfTheBelow" | split: '.' %}
 
     {% if words[1] contains "BUD"%}
 
